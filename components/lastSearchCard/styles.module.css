@@ -1,0 +1,35 @@
+.search_card_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 16px;
+  background: var(--Stroke-color);
+  border: 1px solid;
+  border-color: var(--Neutral-700);
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 10px;
+  width: 200px;
+}
+
+.search_card_id {
+  font-weight: 600;
+  font-size: 28px;
+  color: #2e3646;
+  margin-top: 10px;
+}
+
+.search_card_footer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.search_card_footer .search_card_hits {
+  padding: 2px 8px;
+  background: #495768;
+  border-radius: 5px;
+  color: #ffff;
+}

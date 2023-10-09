@@ -1,0 +1,62 @@
+.date_filter {
+  max-width: 650px;
+  display: flex;
+  margin: 32px 0px;
+}
+
+.button {
+  color: var(--Grey-50);
+  font-size: 15px;
+  font-family: var(--inter-font);
+  display: flex;
+  padding: 9px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 64px;
+  border: 1px solid var(--stroke, #D1D9E2);
+  background: var(--background-1, #F8F9FB);
+  margin-right: 16px;
+}
+
+.button_selected {
+  border: 1px solid var(--Brand-primary, #0080FF);
+  background-image: url("/blue-check.svg");
+  background-position-y: 50%;
+  background-position-x: 16px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+}
+
+/* .filter_bar_container {
+  padding: 10px;
+  background-color: var(--Stroke-color);
+  border: 1px solid;
+  border-color: var(--Neutral-600);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter_bar {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid;
+  border-color: var(--Neutral-600);
+  flex-grow: 1;
+}
+
+.apply_button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+  padding: 8px 16px;
+  box-shadow: none;
+  color: var(--Stroke-color);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-left: 16px;
+} */

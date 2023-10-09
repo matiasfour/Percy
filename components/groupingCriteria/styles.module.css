@@ -1,0 +1,10 @@
+.grouping_criteria_section {
+    margin-top: 32px;
+}
+.grouping_cards {
+    margin: 32px 0px;
+    max-width: 940px;
+    width: 100%;
+    display: flex;
+
+}

@@ -1,0 +1,60 @@
+name: helm package and push
+
+on:
+  push:
+    branches:
+      - master
+      - staging
+      - development
+    paths:
+      - 'deployment/**'
+
+jobs:
+  package-and-push:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+
+      - name: Install Helm
+        run: |
+          curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+          helm version --short
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          sudo pip3 install awscli
+
+      - name: Login to AWS ECR
+        run: |
+          aws ecr get-login-password --region us-east-1 | helm registry login --username AWS --password-stdin 168476488911.dkr.ecr.us-east-1.amazonaws.com
+
+      - name: Get current date
+        run: echo "DATE_TAG=$(date +%s)" >> $GITHUB_ENV
+
+      - name: defining helm chart version
+        run: |
+          if [ "$GITHUB_REF" == "refs/heads/master" ]; then
+            echo "HELM_CHART_VERSION=0.1.$DATE_TAG" >> $GITHUB_ENV
+          elif [ "$GITHUB_REF" == "refs/heads/staging" ]; then
+            echo "HELM_CHART_VERSION=0.3.$DATE_TAG" >> $GITHUB_ENV
+          else
+            echo "HELM_CHART_VERSION=0.2.$DATE_TAG" >> $GITHUB_ENV
+          fi
+
+      - name: Package Helm chart
+        run: helm package deployment/percy-signals-frontend --version $HELM_CHART_VERSION
+
+      - name: Push Helm Chart to ECR
+        run: |
+          helm push percy-signals-frontend-$HELM_CHART_VERSION.tgz oci://168476488911.dkr.ecr.us-east-1.amazonaws.com/

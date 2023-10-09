@@ -1,0 +1,8 @@
+.tabs_nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid;
+  border-color: var(--Dark-grey);
+  margin-bottom: 15px;
+}

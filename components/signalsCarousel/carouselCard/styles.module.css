@@ -1,0 +1,50 @@
+.carousel_card_container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100px;
+  border: 1px solid;
+  border-color: var(--Neutral-600);
+  border-radius: 10px;
+  background-color: var(--Stroke-color);
+  padding: 16px;
+}
+
+.card_selected {
+  border: 1px solid;
+  border-color: var(--Brand-primary);
+}
+
+.carousel_card_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.apply_button {
+  border: none;
+  background-color: inherit;
+  color: var(--Brand-primary);
+  cursor: pointer;
+  line-height: 24px;
+}
+
+.apply_button:active {
+  background-color: transparent;
+}
+
+.disabled {
+  color: #495768;
+  cursor: default;
+}
+
+.period_value {
+  margin-top: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 24px;
+  color: var(--Grey-50);
+}

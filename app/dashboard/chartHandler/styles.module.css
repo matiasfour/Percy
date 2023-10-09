@@ -1,0 +1,9 @@
+.total_signals {
+    display: block;
+    margin-top: 32px;
+    font-size: 28px;
+    color: #2E3646;
+    font-family: var(--inter-font);
+    font-size: 28px;
+    font-weight: 700;
+}

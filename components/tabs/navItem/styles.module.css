@@ -1,0 +1,14 @@
+.nav_item {
+  border-bottom: 1px solid;
+  border-color: var(--Dark-grey);
+  color: var(--Dark-grey);
+  padding: 10px 5px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.nav_selected {
+  border-bottom: 2px solid;
+  border-color: var(--Brand-primary);
+  color: var(--Brand-primary);
+}

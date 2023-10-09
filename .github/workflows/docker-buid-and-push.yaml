@@ -1,0 +1,42 @@
+name: Docker build and push
+
+on:
+  push:
+    branches:
+      - master
+      - staging
+      - development
+    paths-ignore:
+      - 'deployment/**'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+
+      - name: Get current date
+        run: echo "DOCKER_DATE_ENV_TAG=$(date +%s)" >> $GITHUB_ENV
+
+      - name: Defining env tag name
+        run: |
+          if [ "$GITHUB_REF" == "refs/heads/master" ]; then
+            echo "DOCKER_ENV_TAG=prod" >> $GITHUB_ENV
+          elif [ "$GITHUB_REF" == "refs/heads/staging" ]; then
+            echo "DOCKER_ENV_TAG=staging" >> $GITHUB_ENV
+          else
+            echo "DOCKER_ENV_TAG=dev" >> $GITHUB_ENV
+          fi
+          
+      - name: Build and upload image to ECR
+        uses: appleboy/docker-ecr-action@master
+        with:
+          access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          repo: percy/signals-frontend
+          tags: "${{ env.DOCKER_ENV_TAG }}-${{ env.DOCKER_DATE_ENV_TAG }}, latest"
+          registry: 168476488911.dkr.ecr.us-east-1.amazonaws.com
+          region: us-east-1
+          dockerfile: Dockerfile

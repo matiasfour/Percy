@@ -1,0 +1,79 @@
+.counter_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.counter_composed_input {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.counter_composed_input > input {
+  width: 25px;
+  border: none;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: var(--Grey-50);
+  margin: 0px;
+  text-align: center;
+}
+
+.counter_composed_input > input:focus-visible {
+  outline-width: 0;
+}
+
+.counter_label {
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: -0.001em;
+  color: var(--Darker-grey);
+}
+
+.counter_btn {
+  width: 30px;
+  background-color: var(--Stroke-color);
+  border: 1px solid;
+  border-color: var(--Grey-50);
+  color: var(--Grey-50);
+}
+
+.increase_btn {
+  margin-left: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 1px solid var(--Neutral-600);
+}
+
+.decrease_btn {
+  margin-right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 1px solid var(--Neutral-600);
+}
+
+.close_icon_filter {
+  border: none;
+  padding-top: 4px;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.open_filter_label {
+  border: none;
+  background-color: inherit;
+  min-width: 100px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: -0.001em;
+  color: var(--Grey-50);
+}

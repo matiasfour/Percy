@@ -1,0 +1,29 @@
+.banner {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  padding: 5px 72px;
+  background-color: var(--Stroke-color);
+  border-bottom: 1px solid;
+  border-color: var(--Neutral-600);
+  z-index: 9999;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 36px;
+    padding: 0px 16px;
+    box-shadow: none;
+    background: #fff;
+    color: var(--Darker-grey);
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid #E6E9EC;
+    cursor: pointer;
+    font-size: 14px;
+}

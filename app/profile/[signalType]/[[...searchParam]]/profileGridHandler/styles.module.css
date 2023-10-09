@@ -1,0 +1,7 @@
+.tab_container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  max-width: 100%;
+  min-width: 100%;
+}

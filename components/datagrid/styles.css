@@ -1,0 +1,95 @@
+.percy-datagrid-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  border-color: var(--Neutral-700);
+  border-radius: 5px;
+  background-color: var(--Stroke-color);
+  color: var(--Dark-grey);
+}
+
+.percy-datagrid-header {
+  display: flex;
+  border-bottom: 1px solid;
+  border-color: var(--Neutral-700);
+  flex-direction: column;
+  padding: 10px;
+}
+
+.InovuaReactDataGrid__column-header__content {
+  display: flex !important;
+  align-items: center;
+}
+
+div[role="grid"] {
+  border: none;
+  font-family: var(--inter-font);
+}
+
+div[role="columnheader"] {
+  border: none;
+  border-bottom: 1px solid;
+  border-color: var(--Neutral-700);
+  background-color: var(--Stroke-color);
+  font-weight: 500;
+  font-size: 10px;
+}
+
+div[role="gridcell"] {
+  border: none;
+  border-bottom: 1px solid;
+  border-color: var(--Neutral-700);
+  background-color: var(--Stroke-color);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.custom-pagination {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F8F9FB;
+  padding-bottom: 22px;
+}
+
+.button-pages {
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: transparent !important;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.active {
+  background-color: #E6E9EC !important;
+  border: none;      
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.sort {
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 20px;
+}
+
+.sort-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.up-arrow {
+  transform: scaleY(-1);
+}

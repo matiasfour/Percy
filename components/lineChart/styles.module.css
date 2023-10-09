@@ -1,0 +1,20 @@
+.chart_container {
+  background-color: var(--Stroke-color);
+  border: 1px solid;
+  border-color: var(--Neutral-600);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.chart_header {
+  border-bottom: 1px solid;
+  border-color: var(--Neutral-600);
+  padding: 10px;
+}
+
+.line_chart {
+  height: 500px;
+  margin: 0px 100px;
+  display: flex;
+  justify-content: center;
+}

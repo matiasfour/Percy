@@ -1,0 +1,59 @@
+
+.card {
+    max-width: 300px;
+    width: 100%;
+    max-height: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid;
+    border-color: var(--Neutral-600);
+    border-radius: 10px;
+    background-color: var(--Stroke-color);
+    padding: 16px;
+    margin-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .selectedCard {
+    border: 1px solid;
+    border-color: var(--Brand-primary);
+  }
+  
+  .apply_button {
+    border: none;
+    background-color: inherit;
+    color: var(--Brand-primary);
+    cursor: pointer;
+    line-height: 24px;
+  }
+
+  .apply_button:active {
+    background-color: transparent;
+  }
+
+  .disabled {
+    color: #495768;
+    cursor: default;
+  }
+
+  .disabled:active {
+    background-color: transparent;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .criteria {
+    color: #2E3646;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: -0.28px;
+  }
+  
